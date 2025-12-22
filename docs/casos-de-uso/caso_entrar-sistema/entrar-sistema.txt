@@ -9,5 +9,3 @@ CASO DE USO: Entrar no Sistema
  Fluxos alternativos: Em caso de senha incorreta, o sistema solicita nova tentativa.
  
  Exceções: Conta inexistente.
- 
- Modelo de interação associado: Diagrama de sequência.

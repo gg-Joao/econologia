@@ -9,5 +9,3 @@ CASO DE USO: Abrir Conta
  Fluxos alternativos: Caso algum dado esteja incompleto, o sistema solicita a correção.
  
  Exceções: Dados inválidos ou e-mail já cadastrado.
- 
- Modelo de interação associado: Diagrama de sequência.

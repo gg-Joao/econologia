@@ -9,5 +9,3 @@
  Fluxos alternativos: Caso a data não esteja disponível, o sistema sugere outra opção.
 
  Exceções: Falha na comunicação com a cooperativa.
- 
- Modelo de interação associado: Diagrama de sequência.
