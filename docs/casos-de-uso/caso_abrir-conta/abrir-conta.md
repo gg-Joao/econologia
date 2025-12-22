@@ -8,4 +8,4 @@
  Fluxo principal: O usuário seleciona a opção de abrir conta, informa seus dados     pessoais, o sistema valida as informações e realiza o cadastro.
  Fluxos alternativos: Caso algum dado esteja incompleto, o sistema solicita a correção.
  
- Exceções: Dados inválidos ou e-mail já cadastrado.
+ Exceções: Exibe mensagem: "Dados inválidos ou e-mail já cadastrado."
