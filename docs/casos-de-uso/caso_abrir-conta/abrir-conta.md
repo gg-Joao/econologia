@@ -1,4 +1,4 @@
-CASO DE USO: Abrir Conta
+## CASO DE USO: Abrir Conta
 
  Atores envolvidos: Usuário (Morador ou Cooperativa)
 
