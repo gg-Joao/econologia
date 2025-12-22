@@ -1,6 +1,6 @@
 ## CASO DE USO: Entrar no Sistema
 
- Atores envolvidos: Usuário
+ Atores envolvidos: Usuário (Morador ou Cooperativa)
 
  Pré-condições: O usuário possui cadastro no sistema.
 
