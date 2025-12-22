@@ -10,4 +10,4 @@
  
  Fluxos alternativos: Em caso de senha incorreta, o sistema solicita nova tentativa.
  
- Exceções: Conta inexistente.
+ Exceções: Exibe mensagem: "Conta inexistente."
