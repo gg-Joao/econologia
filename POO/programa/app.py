@@ -4,8 +4,11 @@ from dao.admin_dao import AdminDAO
 from models.admin import Admin
 from models.morador import Morador
 from dao.morador_dao import MoradorDAO
+import sqlite3
 
 Database.criar_tabelas()
+conn = sqlite3.connect('sistema.db')
+cursor = conn.cursor()
 
 
 if "admin" not in st.session_state:
@@ -38,20 +41,21 @@ if menu == "Login Morador":
         morador = MoradorDAO.login(email, senha)
         if morador:
             st.session_state.morador = morador
-            st.success(f"Bem-vindo")
+            st.success(f"Bem-vindo, {morador.get_nome()}")
         else:
             st.error("Email ou senha inválidos")
 
 if menu == "Cadastro Morador":
     st.header("Cadastro de Morador")
 
+    id = cursor.lastrowid
     nome = st.text_input("Nome")
     email = st.text_input("Email")
     fone = st.text_input("Telefone")
     senha = st.text_input("Senha", type="password")
 
     if st.button("Cadastrar"):
-        morador = Morador(nome, email, fone, senha=senha)
+        morador = Morador(id, nome=nome, email=email, fone=fone, senha=senha)
         MoradorDAO.inserir(morador)
         st.success("Morador cadastrado com sucesso!")
 
@@ -67,7 +71,7 @@ if menu == "Login Admin":
         admin = AdminDAO.login(email, senha)
         if admin:
             st.session_state.admin = admin
-            st.success(f"Bem-vindo, {admin.nome}")
+            st.success(f"Bem-vindo, {admin.get_nome()}")
         else:
             st.error("Email ou senha inválidos")
 
@@ -78,7 +82,7 @@ elif menu == "Painel Admin":
     else:
         st.header("Painel Administrativo")
 
-        st.write(f" Logado como: **{st.session_state.admin.nome}**")
+        st.write(f" Logado como: **{st.session_state.admin.get_nome()}**")
 
         admins = AdminDAO.listar()
         st.subheader("Administradores cadastrados")

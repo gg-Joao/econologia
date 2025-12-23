@@ -1,12 +1,40 @@
-from datetime import datetime
-
 class Coleta:
-    def __init__(self, id, data, descricao, pontos):
-        self.id = id
-        self.data = data
-        self.confirmado = False
-        self.descricao = descricao
-        self.pontos = pontos
+    def __init__(self, id = None, data = None, confirmado = False, descricao = None, pontos = 0):
+        self. set_id(id)
+        self.set_data(data)
+        self.set_confirmado(confirmado)
+        self.set_desc(descricao)
+        self.set_pontos(pontos)
 
     def __str__(self):
-        return f"Coleta {self.id} - {self.descricao}"
+        return f"ID: {self.get_id()} - DATA: {self.get_data()} - CONFIRMADO: {self.get_confirmado()} - DESCRIÇÃO: {self.get_desc()} - PONTOS: {self.get_pontos()}"
+
+    def set_id(self, id):
+        self.__id = id
+    
+    def get_id(self):
+        return self.__id
+    
+    def set_data(self, data):
+        self.__data = data
+    
+    def get_data(self):
+        return self.__data
+    
+    def set_desc(self, desc):
+        self.__desc = desc
+
+    def get_desc(self):
+        return self.__desc
+    
+    def set_confirmado(self, confirmado):
+        self.__confirmado = confirmado
+    
+    def get_confirmado(self):
+        return self.__confirmado
+    
+    def set_pontos(self, pontos):
+        self.__pontos = pontos
+
+    def get_pontos(self):
+        return self.__pontos

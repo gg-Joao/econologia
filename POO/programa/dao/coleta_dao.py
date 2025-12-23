@@ -10,7 +10,7 @@ class ColetaDAO(BaseDAO):
         cursor = conn.cursor()
         cursor.execute(
             "INSERT INTO coleta (data, confirmado, descricao, pontos) VALUES (?, ?, ?, ?)",
-            (obj.data.isoformat(), int(obj.confirmado), obj.descricao, obj.pontos)
+            (obj.get_data().isoformat(), int(obj.get_confirmado()), obj.get_desc(), obj.get_pontos())
         )
         conn.commit()
         conn.close()
@@ -25,7 +25,6 @@ class ColetaDAO(BaseDAO):
 
         lista = []
         for d in dados:
-            coleta = Coleta(d[0], datetime.fromisoformat(d[1]), d[3], d[4])
-            coleta.confirmado = bool(d[2])
+            coleta = Coleta(d[0], datetime.fromisoformat(d[1]), bool(d[2]), d[3], d[4])
             lista.append(coleta)
         return lista

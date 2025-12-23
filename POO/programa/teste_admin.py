@@ -5,8 +5,8 @@ from models.admin import Admin
 Database.criar_tabelas()
 
 admin = Admin(
-    nome="Admin",
-    email="admin@email.com",
+    nome="Admina",
+    email="admina@email.com",
     senha="123"
 )
 

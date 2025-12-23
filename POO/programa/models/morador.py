@@ -1,7 +1,8 @@
 from models.usuario import Usuario
 
 class Morador(Usuario):
-    def __init__(self, nome, email, fone, pontos=0, senha=""):
+    def __init__(self, id=None, nome="", email="", fone=0, pontos=0, senha=""):
+        self.set_id(id)
         self.set_nome(nome)
         self.set_email(email)
         self.set_fone(fone)
@@ -9,7 +10,7 @@ class Morador(Usuario):
         self.set_senha(senha)
 
     def __str__(self):
-        return f"{self.nome} ({self.pontos} pontos)"
+        return f"ID: {self.get_id()} - NOME: {self.get_nome()} - EMAIL: {self.get_email()} - FONE: {self.get_fone()} - PONTOS: ({self.get_pontos()}) - SENHA: {self.get_senha()}"
     
     def set_nome(self, nome):
         self.__nome = nome

@@ -10,7 +10,7 @@ class AdminDAO:
         cursor.execute("""
             INSERT INTO admin (nome, email, senha)
             VALUES (?, ?, ?)
-        """, (admin.nome, admin.email, admin.senha))
+        """, (admin.get_nome(), admin.get_email(), admin.get_senha()))
         conn.commit()
         conn.close()
 

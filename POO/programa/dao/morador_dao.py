@@ -39,5 +39,5 @@ class MoradorDAO:
 
         lista = []
         for d in dados:
-            lista.append(Morador(d[1], d[2], d[3], d[4], d[5]))
+            lista.append(Morador(d[0], d[1], d[2], d[3], d[4], d[5]))
         return lista
